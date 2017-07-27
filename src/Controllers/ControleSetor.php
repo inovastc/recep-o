@@ -26,7 +26,7 @@ class ControleSetor {
             if ($modelo->verificaNomeDosetor($setor)) {
                 echo 'Setor já Existente';
             } else {
-                if ($modelo->cadastrarSetor(strtoupper($setor))) {
+                if ($modelo->cadastrarSetor($setor)) {
                     echo 'Setor Cadastrado com Sucesso';
                 } else {
                     echo 'Erro ao Cadastrar Setor';
@@ -59,7 +59,7 @@ class ControleSetor {
             if ($modelo->verificaNomeDosetor($novoNome)) {
                 echo 'Setor já Existente';
             } else {
-                if ($modelo->editarSetor(strtoupper($novoNome), $id)) {
+                if ($modelo->editarSetor($novoNome, $id)) {
                     echo 'Setor Editado com Sucesso';
                 } else {
                     echo 'Erro ao Editar Setor';

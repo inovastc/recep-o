@@ -1,11 +1,12 @@
 create database sistema_recepcao;
 use sistema_recepcao;
+
 -- phpMyAdmin SQL Dump
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Jul-2017 às 15:24
+-- Generation Time: 27-Jul-2017 às 22:37
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -21,7 +22,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistema recepcao`
+-- Database: `sistema_recepcao`
 --
 
 -- --------------------------------------------------------
@@ -73,6 +74,23 @@ CREATE TABLE `setor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `setor`
+--
+
+INSERT INTO `setor` (`codigo`, `nome`) VALUES
+(3, 'Gerência'),
+(4, 'Recepção'),
+(5, 'Financeiro'),
+(6, 'Jurídico '),
+(7, 'SPC/Paracatu Card '),
+(8, 'Junta Comercial'),
+(9, 'Certificado Digital'),
+(10, 'Comercial'),
+(11, 'Prefeitura Municipal '),
+(12, 'Segurança do Trabalho '),
+(13, 'Comunicação  ');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -115,7 +133,7 @@ ALTER TABLE `servico`
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Constraints for dumped tables
 --

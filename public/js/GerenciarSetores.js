@@ -34,6 +34,7 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         alert(data);
+                         location.reload();
                     },
                     error: function (data) {
                         alert(data);
