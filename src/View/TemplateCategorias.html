@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Categorias</title>
+         {{include ('Head.html')}}
+         <script src="js/GerenciarCategorias.js" type="text/javascript"></script>
+    </head>
+    
+     <body style="background-color: #dddbdb">
+         {{include ('Menu.html')}}
+        <div class="container" style="margin-top: 13%">
+            <h1 style="text-align:center">Lista De Categorias</h1>
+            {% if categorias != null%}
+            <table class=" table table-bordered">
+                <thead style="background-color: #1E90FF;color: #FFF">
+                    <tr>
+                        <th><center>Nome</center></th>
+                        <th><center>Operações</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for categoria in categorias %}
+                    <tr class="active">       
+                        <td>{{categoria.nome}}</td>
+                        <td><button class="btn btn-default" value="editarCategoria" id="{{categoria.codigo}}">Editar</button>
+                        <button class="btn btn-danger" value="editarCategoria" id="{{categoria.codigo}}">Excluir</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </div>   
+    </body>
+</html>
