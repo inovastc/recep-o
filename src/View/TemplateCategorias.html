@@ -10,6 +10,13 @@
          {{include ('Menu.html')}}
         <div class="container" style="margin-top: 13%">
             <h1 style="text-align:center">Lista De Categorias</h1>
+            <div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <button type="button" class=" btn btn-primary" data-toggle="modal" data-target="#modalNovaCategoria">Adicionar Nova Categoria</button> 
+                    </div>                              
+                </div>                     
+            </div>
             {% if categorias != null%}
             <table class=" table table-bordered">
                 <thead style="background-color: #1E90FF;color: #FFF">
@@ -30,6 +37,32 @@
                 </tbody>
             </table>
             {% endif %}
-        </div>   
+        </div>
+          <div id="modalNovaCategoria" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Adicionar Categoria</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Nome da Categoria:</div>
+                                    <input type="text" class="form-control" name="nomeCategoria" id="nomeCategoria" />                             
+                                </div>
+                                <br>
+                             <button class="btn btn-success"  type="button" id="btnEnviarCategoria">Enviar Nova Categoria</button>&nbsp
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
