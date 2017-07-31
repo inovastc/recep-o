@@ -12,8 +12,9 @@ class ModeloServico {
         
     }
 
-    function cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, $responsavel, $setor_dois, $responsavel_dois) {
-        try {
+    function cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, 
+            $responsavel, $setor_dois, $responsavel_dois) {       
+         try {
             $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`) "
                     . "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
             $p_sql = Conexao::getInstance()->prepare($sql);
@@ -30,7 +31,7 @@ class ModeloServico {
             return 0;
         } catch (Exception $e) {
             echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
-        }
+        }      
     }
 
     function verificaNomeDoServico($desc) {
