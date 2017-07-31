@@ -12,11 +12,10 @@ class ModeloServico {
         
     }
 
-    
     function cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, $responsavel, $setor_dois, $responsavel_dois) {
         try {
-            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`)"
-                    . " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`) "
+                    . "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(1, $descricao);
             $p_sql->bindValue(2, $descricaoDetalhada);
@@ -48,8 +47,7 @@ class ModeloServico {
             echo $exc->getTraceAsString();
         }
     }
-    
-    
+
     function verificaNomeDaCategoria($nome) {
         try {
             $sql = "SELECT * FROM `categoria` WHERE nome = ?";
@@ -64,12 +62,12 @@ class ModeloServico {
             echo $exc->getTraceAsString();
         }
     }
-    
+
     function cadastrarCategoria($nome) {
         try {
             $sql = "INSERT INTO `categoria` (`codigo`, `nome`) VALUES (NULL, ?)";
             $p_sql = Conexao::getInstance()->prepare($sql);
-            $p_sql->bindValue(1, $nome);           
+            $p_sql->bindValue(1, $nome);
             if ($p_sql->execute()) {
                 return Conexao::getInstance()->lastInsertId();
             }
@@ -78,5 +76,5 @@ class ModeloServico {
             echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
         }
     }
-    
+
 }

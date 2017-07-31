@@ -18,41 +18,42 @@ class ControleServicos {
     }
 
     function cadastrarServico() {
-        $descricao = $_POST['descricao'];
-        $descricaoDetalhada = $_POST['descricaoDetalhada'];
-        $categoria = $_POST['categoria'];
-        $setor = $_POST['setor'];
-        $responsavel = $_POST['responsavel'];
-        $setor_dois = $_POST['setor_dois'];
-        $responsavel_dois = $_POST['responsavel_dois'];
-        $modelo = new ModeloServico();
-        echo 'deu';
-        
-        
-        /*if ($descricao == "") {
-            echo("Preencha o campo Descrição");
-        } else if ($descricaoDetalhada == "") {
-            echo("Preencha o campo Descrição Detalhada");
-        } else if ($categoria == "vazio") {
-            echo("Selecione a Categoria");
-        } else if ($setor == "vazio") {
-            echo("Selecione o setor");
-        } else if ($responsavel == "") {
-            echo("Preencha o nome do Responsável");
-        } else if ($setor_dois == "vazio") {
-            echo("Selecione o setor");
-        } else if ($responsavel_dois == "") {
-            echo("Preencha o nome do Responsável");
-        } else {
-            if ($modelo->verificaNomeDoServico($descricao)) {
-                echo 'Serviço já Existente';
+        try {
+            $descricao = $_POST['descricao'];
+            $descricaoDetalhada = $_POST['descricaoDetalhada'];
+            $categoria = $_POST['categoria'];
+            $setor = $_POST['setor'];
+            $responsavel = $_POST['responsavel'];
+            $setor_dois = $_POST['setor_dois'];
+            $responsavel_dois = $_POST['responsavel_dois'];
+            $modelo = new ModeloServico();
+            if ($descricao == "") {
+                echo("Preencha o campo Descrição");
+            } else if ($descricaoDetalhada == "") {
+                echo("Preencha o campo Descrição Detalhada");
+            } else if ($categoria == "vazio") {
+                echo("Selecione a Categoria");
+            } else if ($setor == "vazio") {
+                echo("Selecione o setor");
+            } else if ($responsavel == "") {
+                echo("Preencha o nome do Responsável");
+            } else if ($setor_dois == "vazio") {
+                echo("Selecione o setor");
+            } else if ($responsavel_dois == "") {
+                echo("Preencha o nome do Responsável");
             } else {
-                if ($modelo->cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, $responsavel, $setor_dois, $responsavel_dois)) {
-                    echo 'Serviço Cadastrado com Sucesso';
+                if ($modelo->verificaNomeDoServico($descricao)) {
+                    echo 'Serviço já Existente';
                 } else {
-                    echo 'Erro ao Cadastrar Serviço';
+                    if ($modelo->cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, $responsavel, $setor_dois, $responsavel_dois)) {
+                        echo 'Serviço Cadastrado com Sucesso';
+                    } else {
+                        echo 'Erro ao Cadastrar Serviço';
+                    }
                 }
             }
-        }*/
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 }
