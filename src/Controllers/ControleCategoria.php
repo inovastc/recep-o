@@ -54,10 +54,11 @@ class ControleCategoria {
         $id = $_POST['id'];
         $novoNome = $_POST['novoNome'];
         $modelo = new ModeloCategoria();
+        
         if ($novoNome == "") {
             echo 'Preencha o nome do Categoria';
         } else {
-            if ($modelo->verificaNomeDoCategoria($novoNome)) {
+            if ($modelo->verificaNomeDaCategoria($novoNome)) {
                 echo 'Categoria já Existente';
             } else {
                 if ($modelo->editarCategoria(strtoupper($novoNome), $id)) {
@@ -68,5 +69,4 @@ class ControleCategoria {
             }
         }
     }
-
 }

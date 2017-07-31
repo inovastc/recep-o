@@ -2,8 +2,7 @@ $(document).ready(function () {
     $("button").on('click touchstart', function () {
         valor = this.value; // O value é a ação a ser executada      
         id = this.id; // o ID é o ID do elemento no banco de dados              
-        if (valor == "editarCategoria") {
-            
+        if (valor == "editarCategoria") {        
             var novoNome = prompt("Digite o nome do Categoria:");
             if (novoNome == "" || novoNome == null) {
                 alert("Cancelado com Sucesso");
