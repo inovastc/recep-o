@@ -39,8 +39,10 @@ class ControleCategoria {
     function excluirCategoria() {
         $id = $_POST['id'];
         $modelo = new ModeloCategoria();
-        if ($modelo->verificarServicoNoCategoria($id)) {
-            echo ' Não é possivel excluir pois existe um serviço que faz parte desta categoria';
+        
+        if ($modelo->verificarServicoNaCategoria($id)) {
+            echo ' Não é possivel excluir pois existe um '
+            . 'serviço que faz parte desta categoria';
         } else {
             if ($modelo->excluirCategoria($id)) {
                 echo 'Categoria Excluido com Sucesso';

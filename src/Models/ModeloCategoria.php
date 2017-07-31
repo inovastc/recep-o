@@ -52,9 +52,9 @@ class ModeloCategoria {
         }
     }
 
-    function verificarServicoNoCategoria($id) {
+    function verificarServicoNaCategoria($id) {
         try {
-            $sql = "SELECT * FROM `servico` WHERE Categoria = ? or Categoria_dois = ?";
+            $sql = "select * from servico WHERE servico.categoria = ? or servico.categoria = ?";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(1, $id);
             $p_sql->bindValue(2, $id);
@@ -96,4 +96,5 @@ class ModeloCategoria {
             echo $exc->getTraceAsString();
         }
     }
+
 }
