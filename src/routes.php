@@ -14,7 +14,7 @@ $rotas->add('novoServico', new Route('/novoServico', array('_controller' => 'sis
 $rotas->add('setor', new Route('/setor', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'setores')));
 $rotas->add('categoria', new Route('/categoria', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'categorias')));
 
-// ROTAS DO AJAX
+// ROTAS DO AJAX teste
 $rotas->add('inserirServico', new Route('/inserirServico', array('_controller' => 'sistema\Controllers\ControleServicos', '_method' => 'cadastrarServico')));
 $rotas->add('inserirCategoria', new Route('/inserirCategoria', array('_controller' => 'sistema\Controllers\ControleCategoria', '_method' => 'cadastrarCategoria')));
 $rotas->add('excluirCategoria', new Route('/excluirCategoria', array('_controller' => 'sistema\Controllers\ControleCategoria', '_method' => 'excluirCategoria')));
