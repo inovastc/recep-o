@@ -16,8 +16,9 @@ class ModeloServico {
             $responsavel, $setor_dois, $responsavel_dois) {
         
         try {
-            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`)"
-                    . " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, "
+                    . "`categoria`, `setor`, `responsavel`, `setor_dois`, "
+                    . "`responsavel_dois`)VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
             
             $$p_sql  = Conexao::getInstance()->prepare($sql);
             
