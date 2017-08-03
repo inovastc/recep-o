@@ -1,8 +1,6 @@
 $(document).ready(function () {
     $("#btnEnviarServico").on('click touchstart', function () {
-
        var form = document.getElementById('formCadastrarServico');
-
         descricao = form.descricao.value;
         descricaoDetalhada = form.descricaoDetalhada.value;
         categoria = form.categoria.value;
@@ -42,7 +40,7 @@ $(document).ready(function () {
                     alert(data);
                 },
                 error: function (data) {
-                    console.log(data.toString());
+                    alert(data.toString());
                 }
             });
         }

@@ -5,6 +5,7 @@ namespace sistema\Controllers;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use sistema\models\ModeloServico;
+use sistema\models\ModeloTeste;
 use Symfony\Component\Routing\RequestContext;
 use Twig\Environment;
 
@@ -17,7 +18,7 @@ class ControleServicos {
         $this->sessao = $sessao;
     }
 
-    function cadastrarServico() {
+    function cadastrarServico() {     
         try {
             $descricao = $_POST['descricao'];
             $descricaoDetalhada = $_POST['descricaoDetalhada'];

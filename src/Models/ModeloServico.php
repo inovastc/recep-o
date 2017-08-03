@@ -16,22 +16,26 @@ class ModeloServico {
             $responsavel, $setor_dois, $responsavel_dois) {
         
         try {
-            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`) "
-                    . "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
-            $p_sql = Conexao::getInstance()->prepare($sql);
-            $p_sql->bindValue(1, $descricao);
-            $p_sql->bindValue(2, $descricaoDetalhada);
-            $p_sql->bindValue(3, $categoria);
-            $p_sql->bindValue(4, $setor);
-            $p_sql->bindValue(5, $responsavel);
-            $p_sql->bindValue(6, $setor_dois);
-            $p_sql->bindValue(7, $responsavel_dois);
-            if ($p_sql->execute()) {
+            $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`)"
+                    . " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+            
+            $$p_sql  = Conexao::getInstance()->prepare($sql);
+            
+            $$p_sql ->bindValue(1, $descricao);
+            $$p_sql ->bindValue(2, $descricaoDetalhada);
+            $$p_sql ->bindValue(3, $categoria);
+            $$p_sql ->bindValue(4, $setor);
+            $$p_sql ->bindValue(5, $responsavel);
+            $$p_sql ->bindValue(6, $setor_dois);
+            $$p_sql ->bindValue(7, $responsavel_dois);
+            
+            if ($$p_sql ->execute($$p_sql)) {
                 return Conexao::getInstance()->lastInsertId();
             }
+            
             return 0;
-        } catch (Exception $e) {
-            echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
+        } catch (PDOException $e) {
+            echo "Ocorreu um erro ao tentar executar esta ação. <br>".$e->getMessage();
         }
     }
 
