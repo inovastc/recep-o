@@ -29,7 +29,7 @@ class ModeloServico {
             $$p_sql ->bindValue(6, $setor_dois);
             $$p_sql ->bindValue(7, $responsavel_dois);
             
-            if ($$p_sql ->execute($$p_sql)) {
+            if ($$p_sql ->execute()) {
                 return Conexao::getInstance()->lastInsertId();
             }
             
