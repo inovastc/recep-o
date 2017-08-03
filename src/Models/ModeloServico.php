@@ -20,17 +20,17 @@ class ModeloServico {
                     . "`categoria`, `setor`, `responsavel`, `setor_dois`, "
                     . "`responsavel_dois`)VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
             
-            $$p_sql  = Conexao::getInstance()->prepare($sql);
+            $p_sql  = Conexao::getInstance()->prepare($sql);
             
-            $$p_sql ->bindValue(1, $descricao);
-            $$p_sql ->bindValue(2, $descricaoDetalhada);
-            $$p_sql ->bindValue(3, $categoria);
-            $$p_sql ->bindValue(4, $setor);
-            $$p_sql ->bindValue(5, $responsavel);
-            $$p_sql ->bindValue(6, $setor_dois);
-            $$p_sql ->bindValue(7, $responsavel_dois);
+            $p_sql ->bindValue(1, $descricao);
+            $p_sql ->bindValue(2, $descricaoDetalhada);
+            $p_sql ->bindValue(3, $categoria);
+            $p_sql ->bindValue(4, $setor);
+            $p_sql ->bindValue(5, $responsavel);
+            $p_sql ->bindValue(6, $setor_dois);
+            $p_sql ->bindValue(7, $responsavel_dois);
             
-            if ($$p_sql ->execute()) {
+            if ($p_sql ->execute()) {
                 return Conexao::getInstance()->lastInsertId();
             }
             
