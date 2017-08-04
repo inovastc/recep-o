@@ -47,4 +47,10 @@ class ControleDePaginas {
         $categorias = $modelo->buscaCaterogias();
         return $this->response->setContent($this->twig->render('TemplateCategorias.html',array('categorias' => $categorias)));
     }
+    
+    public function relacao() {
+        $modelo = new ModeloCategoria();      
+        $categorias = $modelo->buscaCaterogias();                 
+        return $this->response->setContent($this->twig->render('TemplateRelacao.html',array('categorias' => $categorias)));
+    }
 }

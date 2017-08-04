@@ -83,5 +83,4 @@ class ModeloServico {
             echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
         }
     }
-
 }

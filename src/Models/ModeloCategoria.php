@@ -95,6 +95,5 @@ class ModeloCategoria {
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
-    }
-
+    }    
 }

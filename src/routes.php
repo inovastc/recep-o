@@ -13,6 +13,9 @@ $rotas->add('raiz', new Route('/', array('_controller' => 'sistema\Controllers\C
 $rotas->add('novoServico', new Route('/novoServico', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'novoServico')));
 $rotas->add('setor', new Route('/setor', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'setores')));
 $rotas->add('categoria', new Route('/categoria', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'categorias')));
+$rotas->add('relacao', new Route('/relacao', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relacao')));
+
+
 
 // ROTAS DO AJAX teste
 $rotas->add('inserirServico', new Route('/inserirServico', array('_controller' => 'sistema\Controllers\ControleServicos', '_method' => 'cadastrarServico')));
