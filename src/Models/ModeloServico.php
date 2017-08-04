@@ -86,7 +86,7 @@ class ModeloServico {
     
      function buscaServicos() {
         try {
-            $sql = "SELECT * FROM servico";
+            $sql = "SELECT descricao , descricaoDetalhada , categoria.nome as categoria , setor.nome as setor , responsavel , setor_dois, responsavel_dois FROM servico INNER JOIN categoria on servico.categoria = categoria.codigo INNER JOIN setor on servico.setor = setor.codigo";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);
