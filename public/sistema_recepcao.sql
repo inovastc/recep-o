@@ -1,12 +1,11 @@
 create database sistema_recepcao;
 use sistema_recepcao;
-
 -- phpMyAdmin SQL Dump
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Jul-2017 às 22:37
+-- Generation Time: 04-Ago-2017 às 22:03
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -62,6 +61,27 @@ CREATE TABLE `servico` (
   `responsavel_dois` varchar(800) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `servico`
+--
+
+INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`, `setor`, `responsavel`, `setor_dois`, `responsavel_dois`) VALUES
+(1, 'Renegociação tributária', 'Renegociação de débitos tributários municipais inscritos em dívida ativa', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(2, 'Certidões Municipais', 'Emissão de Certidões Municipais referente a regularidade fiscal de empresas', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(3, 'Info - Licitacoes governamentais', 'Informacoes sobre licitacoes de compras e carta convite', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(4, 'Info - Fiscalização municipal', 'Informações - Fiscalização municipal de vigilância sanitária, meio ambiente, tributos, posturas e obras;', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(5, 'Alvará ME/EPP', 'Emissão do Alvará de localização e funcionamento demais empresas e atividades', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(6, 'Alvará MEI', 'Emissão do Alvará de localização e funcionamento do MEI', 2, 2, 'LILLIAN / POLIANE', 14, 'a definir'),
+(7, 'Consulta Viabilidade', 'Consulta de viabilidade de empresas', 2, 2, 'LILLIAN / POLIANE', 14, 'MARCOS'),
+(8, 'Info - CBH', 'Informações Sobre CBH', 3, 2, 'LILLIAN / POLIANE', 14, 'Amanda'),
+(9, 'Info - ADESP', 'Informações Sobre ADESP', 3, 2, 'LILLIAN / POLIANE', 14, 'Patricia'),
+(10, 'Marcação Consultoria Empresarial', 'Marcação Consultoria Empresarial (Financeira, mercado, plano de negocio e outros)', 3, 2, 'LILLIAN / POLIANE', 14, 'Administrador'),
+(11, 'Marcação Consultoria SEBRAE', 'Marcação Consultoria SEBRAE', 3, 2, 'LILLIAN / POLIANE', 14, 'Sebrae'),
+(12, 'Marcação Consultoria Juridica', 'Marcação Consultoria Juridica', 3, 2, 'LILLIAN / POLIANE', 14, 'Advogado'),
+(13, 'Marcação da Consultoria contábil', 'Marcação Consultoria contabil e  tributaçâo', 3, 2, 'LILLIAN / POLIANE', 14, 'CONTABILIDADE'),
+(14, 'Info - Conselho de Segurança', 'Informações Sobre Conselho de Segurança', 3, 2, 'LILLIAN / POLIANE', 14, 'Watson'),
+(15, 'Info - Observatório Social', 'Informações Sobre Observatório Social', 3, 2, 'LILLIAN / POLIANE', 14, 'Marcao');
+
 -- --------------------------------------------------------
 
 --
@@ -88,7 +108,8 @@ INSERT INTO `setor` (`codigo`, `nome`) VALUES
 (8, 'Comercial'),
 (9, 'Prefeitura Municipal '),
 (10, 'Segurança do Trabalho '),
-(11, 'Comunicação  ');
+(11, 'Comunicação  '),
+(14, 'Sala Empreendedor');
 
 --
 -- Indexes for dumped tables
@@ -128,12 +149,12 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Constraints for dumped tables
 --

@@ -14,7 +14,7 @@ class ModeloCategoria {
 
     function buscaServicosNaCaterogias() {
         try {
-            $sql = "SELECT servico.descricao, categoria.nome FROM servico INNER JOIN categoria ON servico.categoria = categoria.codigo";
+            $sql = "SELECT servico.descricaoDetalhada, categoria.nome FROM servico INNER JOIN categoria ON servico.categoria = categoria.codigo";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);
