@@ -53,13 +53,13 @@ INSERT INTO `categoria` (`codigo`, `nome`) VALUES
 
 CREATE TABLE `servico` (
   `codigo` int(11) NOT NULL,
-  `descricao` varchar(800) DEFAULT NULL,
+  `descricao` varchar(800) NOT NULL,
   `descricaoDetalhada` text,
-  `categoria` int(11) DEFAULT NULL,
-  `setor` int(11) DEFAULT NULL,
-  `responsavel` varchar(800) DEFAULT NULL,
-  `setor_dois` int(11) DEFAULT NULL,
-  `responsavel_dois` int(11) DEFAULT NULL
+  `categoria` int(11) NOT NULL,
+  `setor` int(11) NOT NULL,
+  `responsavel` varchar(800) NOT NULL,
+  `setor_dois` int(11) NOT NULL,
+  `responsavel_dois` varchar(800) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -143,8 +143,8 @@ ALTER TABLE `setor`
 --
 ALTER TABLE `servico`
   ADD CONSTRAINT `servico_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`codigo`),
-  ADD CONSTRAINT `servico_ibfk_2` FOREIGN KEY (`setor`) REFERENCES `categoria` (`codigo`),
-  ADD CONSTRAINT `servico_ibfk_3` FOREIGN KEY (`setor_dois`) REFERENCES `categoria` (`codigo`);
+  ADD CONSTRAINT `servico_ibfk_2` FOREIGN KEY (`setor`) REFERENCES `setor` (`codigo`),
+  ADD CONSTRAINT `servico_ibfk_3` FOREIGN KEY (`setor_dois`) REFERENCES `setor` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
