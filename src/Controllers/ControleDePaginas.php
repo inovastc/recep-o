@@ -52,7 +52,12 @@ class ControleDePaginas {
         $modelo = new ModeloCategoria();      
         $categorias = $modelo->buscaCaterogias(); 
         $servicos = $modelo->buscaServicosNaCaterogias();
-        //print_r($servicos);
         return $this->response->setContent($this->twig->render('TemplateRelacao.html',array('categorias' => $categorias,'servicos' => $servicos )));
+    }
+    
+    public function relacaoDetalhada() {
+        $modelo = new ModeloServico();      
+        $servicos = $modelo->buscaServicos();        
+        return $this->response->setContent($this->twig->render('TemplateRelacaoDetalhada.html',array('servicos' => $servicos)));
     }
 }

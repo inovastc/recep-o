@@ -83,4 +83,15 @@ class ModeloServico {
             echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
         }
     }
+    
+     function buscaServicos() {
+        try {
+            $sql = "SELECT * FROM servico";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->execute();
+            return $p_sql->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
 }
