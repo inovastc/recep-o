@@ -78,17 +78,17 @@ CREATE TABLE `setor` (
 --
 
 INSERT INTO `setor` (`codigo`, `nome`) VALUES
-(3, 'Gerência'),
-(4, 'Recepção'),
-(5, 'Financeiro'),
-(6, 'Jurídico '),
-(7, 'SPC/Paracatu Card '),
-(8, 'Junta Comercial'),
-(9, 'Certificado Digital'),
-(10, 'Comercial'),
-(11, 'Prefeitura Municipal '),
-(12, 'Segurança do Trabalho '),
-(13, 'Comunicação  ');
+(1, 'Gerência'),
+(2, 'Recepção'),
+(3, 'Financeiro'),
+(4, 'Jurídico '),
+(5, 'SPC/Paracatu Card '),
+(6, 'Junta Comercial'),
+(7, 'Certificado Digital'),
+(8, 'Comercial'),
+(9, 'Prefeitura Municipal '),
+(10, 'Segurança do Trabalho '),
+(11, 'Comunicação  ');
 
 --
 -- Indexes for dumped tables
