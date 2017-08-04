@@ -12,6 +12,17 @@ class ModeloCategoria {
         
     }
 
+    function buscaServicosNaCaterogias() {
+        try {
+            $sql = "SELECT servico.descricao, categoria.nome FROM servico INNER JOIN categoria ON servico.categoria = categoria.codigo";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->execute();
+            return $p_sql->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+
     function buscaCaterogias() {
         try {
             $sql = "SELECT * FROM categoria";
@@ -95,5 +106,6 @@ class ModeloCategoria {
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
-    }    
+    }
+
 }
