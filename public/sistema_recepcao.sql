@@ -1,11 +1,9 @@
-create database sistema_recepcao;
-use sistema_recepcao;
 -- phpMyAdmin SQL Dump
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Ago-2017 às 22:03
+-- Generation Time: 07-Ago-2017 às 21:27
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -80,7 +78,40 @@ INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, `categoria`,
 (12, 'Marcação Consultoria Juridica', 'Marcação Consultoria Juridica', 3, 2, 'LILLIAN / POLIANE', 14, 'Advogado'),
 (13, 'Marcação da Consultoria contábil', 'Marcação Consultoria contabil e  tributaçâo', 3, 2, 'LILLIAN / POLIANE', 14, 'CONTABILIDADE'),
 (14, 'Info - Conselho de Segurança', 'Informações Sobre Conselho de Segurança', 3, 2, 'LILLIAN / POLIANE', 14, 'Watson'),
-(15, 'Info - Observatório Social', 'Informações Sobre Observatório Social', 3, 2, 'LILLIAN / POLIANE', 14, 'Marcao');
+(15, 'Info - Observatório Social', 'Informações Sobre Observatório Social', 3, 2, 'LILLIAN / POLIANE', 14, 'Marcao'),
+(16, 'Info - Formalização empresas', 'Informações - Formalização, alteração e baixa de empresas em geral', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(17, 'Assuntos Gerencia / Presidência', 'Assuntos Específicos para gerentes e/ou presidentes', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(18, 'Reuniões em Geral', 'Reuniões Gerais', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(19, 'Info - MEI', 'Informações - Micro Empreendedor Individual (Formalização, alteração, baixa, Emissão de CCMEI e DASMEI', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(20, 'Info - Programa Segurança e Medicina', 'Informações - Programa de Segurança e Medicina (PPRA. PCMSO, ASOS, Exames Laboratoriais', 1, 2, 'LILLIAN / POLIANE', 3, 'REJANE'),
+(21, 'Info - Cursos e treinamentos', 'Informações - Cursos, treinamentos, oficinas, encontros, seminários e missões empresariais', 1, 2, 'LILLIAN / POLIANE', 5, 'GABRIELLA SANTOS'),
+(22, 'Info - Credito ME e EPP', 'Informações - Linhas de credito para pequenas, medias e grandes empresas', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(23, 'Info - Filiação', 'Informações - Filiação  ACE / CDL / SINDCOMERCIO', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(24, 'Info - Material informativo', 'Informações e distribuição de material informativo (cartilhas, folders, manuais e etc.)', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(25, 'Info - Credito MEI e PF', 'Informações - Linhas de crédito especiais para MEI e Pessoa fisica', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(26, 'Info - Conciliação e Cobrança Extra Judicial', 'Informações -  Posto Avançado de Conciliação Extrajudicial - PACE', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(27, 'Info - Acertos Financeiros', 'Informações - Acertos financeiros ACE, CDL e Sindcomercio', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(28, 'Info - Atuação junto aos órgãos públicos', 'Informações  - Atuação junto aos órgãos públicos', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(29, 'Info - Ações Sociais', 'Informações - Ações sociais', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(30, 'Info - SPC e SERASA', 'Informações - SPC e SERASA', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(31, 'Info - Auxilio Funeral', 'Informações - Auxilio Funeral', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(32, 'Info - Convenção Coletiva de Trabalho', 'Informações - Convenção Coletiva de Trabalho', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(33, 'Info - Assessoria Jurídica', 'Informações -  Esclarecimentos Jurídicas (CLT, convencoes coletivas, tributarias e outros) ', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(34, 'Info - Locação de Salas e Salão', 'Informações - Alugueis de espaço de salão e salas', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(35, 'Info -Certificação Digital', 'Informações - Certificação Digital', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(36, 'Info - Certificado de Origem', 'Informações - Auxilio Certificado de Origem', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(37, 'Info - Paracatu Card', 'Informações - Paracatu Card', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(38, 'Info - Pesquisa de Opinião', 'Informações - Pesquisa de Opinião', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(39, 'Info - Planos de Saúde ', 'Informações - Planos de Saúde - Unimed, bradesco e outros', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(40, 'Info - Programa Empreender', 'Informações - Programa Empreender', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(41, 'Info - Criação de Logotipos e Materiais de Divulgação ', 'Informações  - Criação de Logotipos e Materiais de Divulgação ', 1, 2, 'LILLIAN / POLIANE', 14, 'LORRANE'),
+(42, 'Info - Campanhas de Incentivo', 'Informações - Campanhas de Incentivo (Cartaz, divulgação, promoção)', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(43, 'Info - Calendário Comercial', 'Informações - Informações sobre Calendário Comercial', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(44, 'Info - Acesso a Informações', 'Informações - Acesso a Informações (sites, facebooks, whatssap)', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(45, 'Info - Banco de Emprego', 'Informações - Banco de Emprego', 1, 2, 'LILLIAN / POLIANE', 14, 'TAINARA / WELLIDA'),
+(46, 'Info - Guia Informativo', 'Informações - Guia Informativo ( catalogo físico e Online)', 1, 2, 'LILLIAN / POLIANE', 14, 'LORRANE'),
+(47, 'Info - Dia do Comerciante', 'Informações - Dia do Comerciante', 1, 2, 'LILLIAN / POLIANE', 14, 'LORRANE'),
+(48, 'Info - Mérito Empresarial', 'Informações - Mérito Empresarial', 1, 2, 'LILLIAN / POLIANE', 14, 'LORRANE');
 
 -- --------------------------------------------------------
 
@@ -149,7 +180,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `setor`
 --
