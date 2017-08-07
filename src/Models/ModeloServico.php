@@ -12,31 +12,30 @@ class ModeloServico {
         
     }
 
-    function cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, 
-            $responsavel, $setor_dois, $responsavel_dois) {
-        
+    function cadastrarServico($descricao, $descricaoDetalhada, $categoria, $setor, $responsavel, $setor_dois, $responsavel_dois) {
+
         try {
             $sql = "INSERT INTO `servico` (`codigo`, `descricao`, `descricaoDetalhada`, "
                     . "`categoria`, `setor`, `responsavel`, `setor_dois`, "
                     . "`responsavel_dois`)VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
-            
-            $p_sql  = Conexao::getInstance()->prepare($sql);
-            
-            $p_sql ->bindValue(1, $descricao);
-            $p_sql ->bindValue(2, $descricaoDetalhada);
-            $p_sql ->bindValue(3, $categoria);
-            $p_sql ->bindValue(4, $setor);
-            $p_sql ->bindValue(5, $responsavel);
-            $p_sql ->bindValue(6, $setor_dois);
-            $p_sql ->bindValue(7, $responsavel_dois);
-            
-            if ($p_sql ->execute()) {
+
+            $p_sql = Conexao::getInstance()->prepare($sql);
+
+            $p_sql->bindValue(1, $descricao);
+            $p_sql->bindValue(2, $descricaoDetalhada);
+            $p_sql->bindValue(3, $categoria);
+            $p_sql->bindValue(4, $setor);
+            $p_sql->bindValue(5, $responsavel);
+            $p_sql->bindValue(6, $setor_dois);
+            $p_sql->bindValue(7, $responsavel_dois);
+
+            if ($p_sql->execute()) {
                 return Conexao::getInstance()->lastInsertId();
             }
-            
+
             return 0;
         } catch (PDOException $e) {
-            echo "Ocorreu um erro ao tentar executar esta ação. <br>".$e->getMessage();
+            echo "Ocorreu um erro ao tentar executar esta ação. <br>" . $e->getMessage();
         }
     }
 
@@ -83,10 +82,15 @@ class ModeloServico {
             echo "Ocorreu um erro ao tentar executar esta ação. <br> $e";
         }
     }
-    
-     function buscaServicos() {
+
+    function buscaServicos() {
         try {
-            $sql = "SELECT descricao , descricaoDetalhada , categoria.nome as categoria , setor.nome as setor , responsavel , setor_dois, responsavel_dois FROM servico INNER JOIN categoria on servico.categoria = categoria.codigo INNER JOIN setor on servico.setor = setor.codigo";
+            $sql = "SELECT descricao , descricaoDetalhada , categoria.nome as categoria , s1.nome as setor , responsavel , s2.nome as setor_dois, responsavel_dois
+                    FROM servico
+                    INNER JOIN categoria on servico.categoria =categoria.codigo
+                    INNER JOIN setor as s1 on (servico.setor = s1.codigo)
+                    INNER JOIN setor as s2 ON (servico.setor_dois = s2.codigo)
+                    ORDER BY servico.descricao";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);
@@ -94,4 +98,5 @@ class ModeloServico {
             echo $exc->getTraceAsString();
         }
     }
+
 }
