@@ -15,13 +15,14 @@
                 <thead style="background-color: #1E90FF;color: #FFF">
                     <tr>
                         <th><center>Descrição</center></th>
-                        <th><center>Descrição Detalhada</center></th>
-                        <th><center>Categoria</center></th>
-                        <th><center>Setor</center></th>
-                        <th><center>Responsavel</center></th>
-                        <th><center>Setor 2 </center></th>
-                        <th><center>Responsavel 2 </center></th>
-                    </tr>
+                <th><center>Descrição Detalhada</center></th>
+                <th><center>Categoria</center></th>
+                <th><center>Setor</center></th>
+                <th><center>Responsavel</center></th>
+                <th><center>Setor 2 </center></th>
+                <th><center>Responsavel 2 </center></th>
+                <th><center>Operações</center></th>
+                </tr>
                 </thead>
 
                 <tbody>
@@ -33,7 +34,11 @@
                         <td>{{servico.setor}}</td>
                         <td>{{servico.responsavel}}</td>
                         <td>{{servico.setor_dois}}</td>
-                        <td>{{servico.responsavel_dois}}</td>                                            
+                        <td>{{servico.responsavel_dois}}</td>
+                        <td><button class="btn btn-primary btn-sm" value="editarCategoria" id="">Editar </button>&nbsp
+                            <br><br>
+                            <button class="btn btn-danger btn-sm" value="editarCategoria" id="">Excluir</button>&nbsp
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
