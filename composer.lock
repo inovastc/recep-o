@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "b10caaf604a3b70c4b79f987352e3ffe5b86f0d0"
+                "reference": "2cb6120e930d2bc67d9da49d282aec4555aedaea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/b10caaf604a3b70c4b79f987352e3ffe5b86f0d0",
-                "reference": "b10caaf604a3b70c4b79f987352e3ffe5b86f0d0",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/2cb6120e930d2bc67d9da49d282aec4555aedaea",
+                "reference": "2cb6120e930d2bc67d9da49d282aec4555aedaea",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2017-07-04T05:26:53+00:00"
+            "time": "2017-08-09T20:06:37+00:00"
         },
         {
             "name": "psr/log",
@@ -116,20 +116,20 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.3.6",
+            "version": "v3.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "49e8cd2d59a7aa9bfab19e46de680c76e500a031"
+                "reference": "2cdc7de1921d1a1c805a13dc05e44a2cd58f5ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/49e8cd2d59a7aa9bfab19e46de680c76e500a031",
-                "reference": "49e8cd2d59a7aa9bfab19e46de680c76e500a031",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/2cdc7de1921d1a1c805a13dc05e44a2cd58f5ad3",
+                "reference": "2cdc7de1921d1a1c805a13dc05e44a2cd58f5ad3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": "^5.5.9|>=7.0.8",
                 "symfony/polyfill-mbstring": "~1.1"
             },
             "require-dev": {
@@ -165,20 +165,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-21T11:04:46+00:00"
+            "time": "2017-09-06T17:07:39+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -224,24 +224,24 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "symfony/routing",
-            "version": "v3.3.6",
+            "version": "v3.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "4aee1a917fd4859ff8b51b9fd1dfb790a5ecfa26"
+                "reference": "970326dcd04522e1cd1fe128abaee54c225e27f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/4aee1a917fd4859ff8b51b9fd1dfb790a5ecfa26",
-                "reference": "4aee1a917fd4859ff8b51b9fd1dfb790a5ecfa26",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/970326dcd04522e1cd1fe128abaee54c225e27f9",
+                "reference": "970326dcd04522e1cd1fe128abaee54c225e27f9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "^5.5.9|>=7.0.8"
             },
             "conflict": {
                 "symfony/config": "<2.8",
@@ -302,7 +302,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-07-21T17:43:13+00:00"
+            "time": "2017-07-29T21:54:42+00:00"
         },
         {
             "name": "twig/twig",

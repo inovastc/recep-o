@@ -15,6 +15,7 @@ $rotas->add('setor', new Route('/setor', array('_controller' => 'sistema\Control
 $rotas->add('categoria', new Route('/categoria', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'categorias')));
 $rotas->add('relacao', new Route('/relacao', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relacao')));
 $rotas->add('relacaoDetalhada', new Route('/relacaoDetalhada', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relacaoDetalhada')));
+$rotas->add('graficoPizza', new Route('/graficoPizza', array('_controller' => 'sistema\Controllers\ControleDeGraficos', '_method' => 'dadosGraficoPizza')));
 
 
 
