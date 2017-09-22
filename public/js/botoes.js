@@ -95,3 +95,29 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$(document).ready(function () {
+    $("#btnCadastrarCliente").on('click touchstart', function () {
+        data = $("#dataCliente").val();
+        nome = $("#nomeCliente").val();
+        nome = $("#nomeCliente").val();
+        if (categoria == "") {
+            alert("Preencha o nome da categoria");
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: '/inserirCategoria',
+                data: {
+                    categoria: categoria,                  
+                },
+                success: function (data) {
+                    alert(data);
+                },
+                error: function (data) {
+                    alert(data);
+                }
+            });
+        }
+    });
+});

@@ -12,46 +12,32 @@ class ModeloGraficos {
         
     }
 
-    function verificaNomeDoServico($desc) {
-        try {
-            $sql = "SELECT * FROM `servico` WHERE descricao = ?";
-            $p_sql = Conexao::getInstance()->prepare($sql);
-            $p_sql->bindValue(1, $desc);
-            $p_sql->execute();
-            if ($p_sql->rowCount() == 1) {
-                return $p_sql->fetch(PDO::FETCH_OBJ);
-            } else
-                return false;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
-    }
-
-    function verificaNomeDaCategoria($nome) {
-        try {
-            $sql = "SELECT * FROM `categoria` WHERE nome = ?";
-            $p_sql = Conexao::getInstance()->prepare($sql);
-            $p_sql->bindValue(1, $nome);
-            $p_sql->execute();
-            if ($p_sql->rowCount() == 1) {
-                return $p_sql->fetch(PDO::FETCH_OBJ);
-            } else
-                return false;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
-    }
-
-    function relatorioServicos() {
+    function relatorioGrafico() {
         try {
             $sql = "SELECT 
-                        c.nome as nome, count(c.nome) as quantidade
+                        c.codigo as codigo, c.nome as nome, count(c.nome) as quantidade
                     FROM
                         servico s, categoria c
                     WHERE
                         s.categoria = c.codigo 
                     GROUP BY
                         c.nome";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->execute();
+            return $p_sql->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+    
+    function relatorioGraficoTotal() {
+        try {
+            $sql = "SELECT 
+                        count(c.codigo) as total
+                    FROM
+                        servico s, categoria c
+                    WHERE
+                        s.categoria = c.codigo ";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);

@@ -99,4 +99,15 @@ class ModeloServico {
         }
     }
 
+    function listaServicos() {
+        try {
+            $sql = "SELECT codigo, descricao FROM servico";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->execute();
+            return $p_sql->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+
 }

@@ -8,7 +8,7 @@ $(function () {
             type: 'pie'
         },
         title: {
-            text: 'Indicadores de Atendimento'
+            text: 'Indicadores de Atendimento Por Serviço'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -27,28 +27,19 @@ $(function () {
             }
         },
         series: [{
-                name: 'Brands',
+                name: 'Porcentagem',
                 colorByPoint: true,
                 data: [{
-                        name: 'Microsoft Internet Explorer',
-                        y: 56.33
-                    }, {
-                        name: 'Chrome',
-                        y: 24.03,
+                        name: document.getElementById('nome1').value,
+                        y: +document.getElementById('quantidade1').value,
                         sliced: true,
                         selected: true
                     }, {
-                        name: 'Firefox',
-                        y: 10.38
+                        name: document.getElementById('nome2').value,
+                        y: +document.getElementById('quantidade2').value,
                     }, {
-                        name: 'Safari',
-                        y: 4.77
-                    }, {
-                        name: 'Opera',
-                        y: 0.91
-                    }, {
-                        name: 'Proprietary or Undetectable',
-                        y: 0.2
+                        name: document.getElementById('nome3').value,
+                        y: +document.getElementById('quantidade3').value
                     }]
             }]
     });

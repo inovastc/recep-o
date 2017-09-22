@@ -26,7 +26,8 @@ class ControleDeGraficos {
     
     public function dadosGraficoPizza() {
         $modelo = new ModeloGraficos();      
-        $graficos = $modelo->relatorioServicos();        
-        return $this->response->setContent($this->twig->render('TemplateGraficoPizza.php',array('graficos' => $graficos)));
+        $graficos = $modelo->relatorioGrafico();
+        $total = $modelo->relatorioGraficoTotal();
+        return $this->response->setContent($this->twig->render('TemplateGraficoPizza.html',array('graficos' => $graficos, 'total' => $total)));
     }
 }
