@@ -50,7 +50,7 @@ class ModeloCliente {
 
     function cadastrarCliente($data, $nome, $cnpj_cpf, $email, $telefone, $finalidade) {
         try {
-            $sql = "INSERT INTO 'relatorio' ('id', data', 'nome', 'cnpj/cpf', 'email', 'telefone', 'finalidade) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO `relatorio` (`id`, `dataCliente`, `nome`, `cnpj/cpf`, `email`, `telefone`, `finalidade`) VALUES (NULL, '?', '?', '?', '?', '?', '?')";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(1, $data);
             $p_sql->bindValue(2, $nome);

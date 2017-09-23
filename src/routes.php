@@ -27,4 +27,5 @@ $rotas->add('editarCategoria', new Route('/editarCategoria', array('_controller'
 $rotas->add('inserirSetor', new Route('/inserirSetor', array('_controller' => 'sistema\Controllers\ControleSetor', '_method' => 'cadastrarSetor')));
 $rotas->add('excluirSetor', new Route('/excluirSetor', array('_controller' => 'sistema\Controllers\ControleSetor', '_method' => 'excluirSetor')));
 $rotas->add('editarSetor', new Route('/editarSetor', array('_controller' => 'sistema\Controllers\ControleSetor', '_method' => 'editarSetor')));
+$rotas->add('inserirCliente', new Route('/inserirCliente', array('_controller' => 'sistema\Controllers\ControleCliente', '_method' => 'cadastrarCliente')));
 return $rotas;

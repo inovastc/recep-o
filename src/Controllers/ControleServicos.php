@@ -18,7 +18,7 @@ class ControleServicos {
         $this->sessao = $sessao;
     }
 
-    function cadastrarServico() {     
+    function cadastrarServico() {
         try {
             $descricao = $_POST['descricao'];
             $descricaoDetalhada = $_POST['descricaoDetalhada'];

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#btnEnviarServico").on('click touchstart', function () {
-       var form = document.getElementById('formCadastrarServico');
+        var form = document.getElementById('formCadastrarServico');
         descricao = form.descricao.value;
         descricaoDetalhada = form.descricaoDetalhada.value;
         categoria = form.categoria.value;
@@ -59,7 +59,7 @@ $(document).ready(function () {
                 type: 'POST',
                 url: '/inserirCategoria',
                 data: {
-                    categoria: categoria,                  
+                    categoria: categoria,
                 },
                 success: function (data) {
                     alert(data);
@@ -83,7 +83,7 @@ $(document).ready(function () {
                 type: 'POST',
                 url: '/inserirSetor',
                 data: {
-                    setor: setor,                  
+                    setor: setor,
                 },
                 success: function (data) {
                     alert(data);
@@ -99,23 +99,36 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#btnCadastrarCliente").on('click touchstart', function () {
-        data = $("#dataCliente").val();
-        nome = $("#nomeCliente").val();
-        nome = $("#nomeCliente").val();
-        if (categoria == "") {
-            alert("Preencha o nome da categoria");
+        var form = document.getElementById('formCadastrarCliente');
+        dataCliente = form.dataCliente.value;
+        nomeCliente = form.nomeCliente.value;
+        cpf_cnpj = form.cpf_cnpj.value;
+        emailCliente = form.emailCliente.value;
+        telefoneCliente = form.telefoneCliente.value;
+        finalidade = form.finalidadeCliente.value;
+
+        if (nomeCliente == "") {
+            alert("Preencha o nome do cliente");
+        } else if (finalidade == 'selecione') {
+            alert("Preencha o campo Serviço");
         } else {
             $.ajax({
                 type: 'POST',
-                url: '/inserirCategoria',
+                url: '/inserirCliente',
                 data: {
-                    categoria: categoria,                  
+                    dataCliente: dataCliente,
+                    nomeCliente: nomeCliente,
+                    cpf_cnpj: cpf_cnpj,
+                    emailCliente: emailCliente,
+                    telefoneCliente: telefoneCliente,
+                    finalidade: finalidade
                 },
                 success: function (data) {
                     alert(data);
                 },
                 error: function (data) {
-                    alert(data);
+                    mydata = data;
+                    console.log(mydata);
                 }
             });
         }

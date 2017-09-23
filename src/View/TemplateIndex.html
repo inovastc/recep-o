@@ -17,7 +17,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">Data Atual:</div>
-                                    <input class="form-control" name="data" id="dataCliente" value="{{date}}" disabled />
+                                    <b><input class="form-control" name="data" id="dataCliente" value="{{date}}" disabled /></b>
                                 </div>                                   
                             </div>                           
                             <div class="form-group">
@@ -29,44 +29,45 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">CNPJ/CPF:</div>
-                                    <input type="text" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" name="cpf"  maxlength="11" id="cpf" />                                      
-                                </div>                                  
+                                    <input type="text" class="form-control cpf-mask" placeholder="Preencha sem símbolos" name="cpf"  maxlength="14" id="cpf_cnpj" />                                      
+                                </div>
                             </div>
-                        </div>                                                                                   
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">Telefone:</div>
-                                <input type="tel" class="form-control phone-ddd-mask" placeholder="Ex.: (00) 0000-0000" maxlength="11" name="telefone" id="telefone" />
-                            </div>
-
-                        </div>
+                        </div>      
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon">E-mail:</div>
-                                <input type="email" class="form-control"  name="email" id="email" />
+                                <input type="email" class="form-control"  name="email" id="emailCliente" />
                             </div>
-                        </div>              
+                        </div>  
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">Telefone:</div>
+                                <input type="tel" class="form-control phone-ddd-mask" placeholder="Preencha sem símbolos" maxlength="11" name="telefone" id="telefoneCliente" />
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="sel1">Serviço:</label>
-                                <select class="form-control" id="sel1">
+                                <select class="form-control" id="finalidadeCliente">
+                                    <option value="selecione">Selecione um serviço ...</option>
                                     {% for servico in servicos %}
-                                    <option>{{servico.descricao}}</option>
+                                    <option value="{{servico.codigo}}">{{servico.descricao}}</option>
                                     {% endfor %}                                       
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" id="btnCadastrarCliente" class="btn btn-success pull-right">Cadastrar</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="reset" id="btnLimparCliente" class="btn btn-danger">Limpar</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <button type="button" id="btnCadastrarCliente" class="btn btn-success pull-right">Cadastrar</button>
-                </div>
-                <div class="col-md-6">
-                    <button type="reset" id="btnLimparCliente" class="btn btn-danger">Limpar</button>
-                </div>
-            </div>
+
         </div>
     </body>
 </html>

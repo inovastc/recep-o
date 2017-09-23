@@ -9,7 +9,7 @@ use Symfony\Component\Routing\RequestContext;
 use Twig\Environment;
 use sistema\models\ModeloCategoria;
 
-class ControleCategoria {
+class ControleCliente {
 
     function __construct(Response $response, Request $request, \Twig_Environment $twig, $sessao) {
         $this->response = $response;
@@ -19,16 +19,27 @@ class ControleCategoria {
     }
 
     function cadastrarCliente() {
-        $cliente = $_POST['cliente'];
-        $modelo = new ModeloCliente();
-        if ($cliente == "") {
-            echo 'Preencha o cliente';
-        } else {
-            if ($modelo->cadastrarCategoria($cliente)) {
-                echo 'categoria Cadastrado com Sucesso';
+        try {
+            $data = $_POST['dataCliente'];
+            $nome = $_POST['nomeCliente'];
+            $cpf_cnpj = $_POST['cpf_cnpj'];
+            $emailCliente = $_POST['emailCliente'];
+            $telefoneCliente = $_POST['telefoneCliente'];
+            $finalidade = $_POST['finalidade'];
+            $modelo = new ModeloCliente();
+            if ($nome == "") {
+                echo("Preencha o nome do cliente");
+            } else if ($finalidade == 'selecione') {
+                echo("Preencha o campo Serviço");
             } else {
-                echo 'Erro ao Cadastrar categoria';
+                if ($modelo->cadastrarCliente(NULL, $data, $nome, $cpf_cnpj, $emailCliente, $telefoneCliente, $finalidade)) {
+                    echo 'Cliente Cadastrado com Sucesso';
+                } else {
+                    echo 'Erro ao Cadastrar Cliente';
+                }
             }
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
         }
     }
 

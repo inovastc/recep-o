@@ -25,7 +25,7 @@ class ControleDePaginas {
     }
 
     public function index() {
-        $date = date('d/m/Y');
+        $date = date('Y-m-d');
         $modeloServico = new ModeloServico();
         $listaServicos = $modeloServico->listaServicos();
         return $this->response->setContent($this->twig->render('TemplateIndex.html', array('date' => $date, 'servicos' => $listaServicos)));
