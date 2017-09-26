@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Request;
 use sistema\models\ModeloCliente;
 use Symfony\Component\Routing\RequestContext;
 use Twig\Environment;
-use sistema\models\ModeloCategoria;
 
 class ControleCliente {
 
@@ -22,7 +21,8 @@ class ControleCliente {
         try {
             $data = $_POST['dataCliente'];
             $nome = $_POST['nomeCliente'];
-            $cpf_cnpj = $_POST['cpf_cnpj'];
+            $cpf = $_POST['cpf'];
+            $cnpj = $_POST['cnpj'];
             $emailCliente = $_POST['emailCliente'];
             $telefoneCliente = $_POST['telefoneCliente'];
             $finalidade = $_POST['finalidade'];
@@ -32,8 +32,8 @@ class ControleCliente {
             } else if ($finalidade == 'selecione') {
                 echo("Preencha o campo Serviço");
             } else {
-                if ($modelo->cadastrarCliente(NULL, $data, $nome, $cpf_cnpj, $emailCliente, $telefoneCliente, $finalidade)) {
-                    echo 'Cliente Cadastrado com Sucesso';
+                if ($modelo->cadastrarCliente($data, $nome, $cpf, $cnpj, $emailCliente, $telefoneCliente, $finalidade)) {
+                    echo 'Cadastrado com Sucesso';
                 } else {
                     echo 'Erro ao Cadastrar Cliente';
                 }
@@ -42,41 +42,12 @@ class ControleCliente {
             echo $exc->getTraceAsString();
         }
     }
+    
+    function buscaClientes(){
+        try{
+            
+        } catch (Exception $ex) {
 
-    function excluirCategoria() {
-        $id = $_POST['id'];
-        $modelo = new ModeloCategoria();
-
-        if ($modelo->verificarServicoNaCategoria($id)) {
-            echo ' Não é possivel excluir pois existe um '
-            . 'serviço que faz parte desta categoria';
-        } else {
-            if ($modelo->excluirCategoria($id)) {
-                echo 'Categoria Excluido com Sucesso';
-            } else {
-                echo 'Erro ao Excluir Categoria';
-            }
         }
     }
-
-    function editarCategoria() {
-        $id = $_POST['id'];
-        $novoNome = $_POST['novoNome'];
-        $modelo = new ModeloCategoria();
-
-        if ($novoNome == "") {
-            echo 'Preencha o nome do Categoria';
-        } else {
-            if ($modelo->verificaNomeDaCategoria($novoNome)) {
-                echo 'Categoria já Existente';
-            } else {
-                if ($modelo->editarCategoria(strtoupper($novoNome), $id)) {
-                    echo 'Categoria Editado com Sucesso';
-                } else {
-                    echo 'Erro ao Editar Categoria';
-                }
-            }
-        }
-    }
-
 }

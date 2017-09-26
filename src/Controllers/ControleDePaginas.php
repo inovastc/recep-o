@@ -63,4 +63,10 @@ class ControleDePaginas {
         $servicos = $modelo->buscaServicos();        
         return $this->response->setContent($this->twig->render('TemplateRelacaoDetalhada.html',array('servicos' => $servicos)));
     }
+    
+    public function relatorio() {
+        $modelo = new \sistema\models\ModeloCliente();      
+        $clientes = $modelo->buscaClientes();        
+        return $this->response->setContent($this->twig->render('TemplateRelatorio.html',array('clientes' => $clientes)));
+    }
 }

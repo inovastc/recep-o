@@ -14,14 +14,12 @@ class ModeloGraficos {
 
     function relatorioGrafico() {
         try {
-            $sql = "SELECT 
-                        c.codigo as codigo, c.nome as nome, count(c.nome) as quantidade
-                    FROM
-                        servico s, categoria c
-                    WHERE
-                        s.categoria = c.codigo 
-                    GROUP BY
-                        c.nome";
+            $sql = "SELECT c.codigo as codigo, c.nome as nome, COUNT(r.finalidade) as quantidade
+                    from relatorio r
+                    inner join servico s on s.codigo = r.finalidade
+                    inner join categoria c on c.codigo = s.categoria
+                    group by c.nome
+                    order by c.codigo";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);
@@ -29,15 +27,13 @@ class ModeloGraficos {
             echo $exc->getTraceAsString();
         }
     }
-    
+
     function relatorioGraficoTotal() {
         try {
             $sql = "SELECT 
-                        count(c.codigo) as total
+                        count(id) as total
                     FROM
-                        servico s, categoria c
-                    WHERE
-                        s.categoria = c.codigo ";
+                        relatorio";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
             return $p_sql->fetchAll(PDO::FETCH_OBJ);
@@ -45,24 +41,4 @@ class ModeloGraficos {
             echo $exc->getTraceAsString();
         }
     }
-
-    function gerarJsonGraficoPizza() {
-        $sql = "SELECT 
-                        c.nome as nome, count(c.nome) as quantidade
-                    FROM
-                        servico s, categoria c
-                    WHERE
-                        s.categoria = c.codigo 
-                    GROUP BY
-                        c.nome";
-        $p_sql = Conexao::getInstance()->prepare($sql);
-        $p_sql->execute();
-        return $p_sql->fetchAll();
-        while ($row = $p_sql->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = array($row['nome'], hexdec($row['quantidade']));
-        }
-
-        $jSon = json_encode($data);
-    }
-
 }

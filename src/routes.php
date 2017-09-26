@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Route;
 
 $rotas = new RouteCollection();
 
+// ICONE
+$rotas->add('favicon', new Route('/favicon.ico'));
 
 //LINKS
 $rotas->add('raiz', new Route('/', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'index')));
@@ -16,6 +18,7 @@ $rotas->add('categoria', new Route('/categoria', array('_controller' => 'sistema
 $rotas->add('relacao', new Route('/relacao', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relacao')));
 $rotas->add('relacaoDetalhada', new Route('/relacaoDetalhada', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relacaoDetalhada')));
 $rotas->add('graficoPizza', new Route('/graficoPizza', array('_controller' => 'sistema\Controllers\ControleDeGraficos', '_method' => 'dadosGraficoPizza')));
+$rotas->add('relatorio', new Route('/relatorio', array('_controller' => 'sistema\Controllers\ControleDePaginas', '_method' => 'relatorio')));
 
 
 

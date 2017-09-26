@@ -102,7 +102,8 @@ $(document).ready(function () {
         var form = document.getElementById('formCadastrarCliente');
         dataCliente = form.dataCliente.value;
         nomeCliente = form.nomeCliente.value;
-        cpf_cnpj = form.cpf_cnpj.value;
+        cpf = form.cpf.value;
+        cnpj = form.cnpj.value;
         emailCliente = form.emailCliente.value;
         telefoneCliente = form.telefoneCliente.value;
         finalidade = form.finalidadeCliente.value;
@@ -118,7 +119,8 @@ $(document).ready(function () {
                 data: {
                     dataCliente: dataCliente,
                     nomeCliente: nomeCliente,
-                    cpf_cnpj: cpf_cnpj,
+                    cpf: cpf,
+                    cnpj: cnpj,
                     emailCliente: emailCliente,
                     telefoneCliente: telefoneCliente,
                     finalidade: finalidade
@@ -127,10 +129,10 @@ $(document).ready(function () {
                     alert(data);
                 },
                 error: function (data) {
-                    mydata = data;
-                    console.log(mydata);
+                    alert(data);
                 }
             });
+            location.reload();
         }
     });
 });
